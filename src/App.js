@@ -32,11 +32,7 @@ function App() {
     });
   }, []);
 
-<<<<<<< HEAD
-  useDocTitle("Nalara Tech");
-=======
-  useDocTitle("Narala Tech");
->>>>>>> 57d137307163d90753dc501b37dbb66abe8713cc
+  useDocTitle("MLD | Molad e Konsult - Bespoke Web and Mobile Applications");
 
   return (
     <>
