@@ -17,10 +17,10 @@ const Footer = () => {
                             <h3 className="font-bold text-4xl mb-4">NALARA </h3>
                            
                             <div className='text-md font-medium text-gray-600'>
-                                <h5>Hennur cross main road,</h5>
-                                <p>Banglore city,</p>
-                                <p>Karnataka,</p>
-                                <p>India.</p>
+                                <h5>Hennur cross main road</h5>
+                                <p>Banglore city</p>
+                                <p>Karnataka</p>
+                                <p>India</p>
                             </div>
                         </div>
                     </div>
