@@ -14,6 +14,8 @@ import DemoProduct from './pages/DemoProduct';
 
 import {useDocTitle} from './components/CustomHook';
 import ScrollToTop from './components/ScrollToTop';
+import Hero from './components/Hero';
+import Intro from './components/Intro';
 
 function App() {
   useEffect(() => {
@@ -30,7 +32,7 @@ function App() {
     });
   }, []);
 
-  useDocTitle("MLD | Molad e Konsult - Bespoke Web and Mobile Applications");
+  useDocTitle("Nalara Tech");
 
   return (
     <>
@@ -39,7 +41,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/get-demo" element={<DemoProduct />} /> 
+            <Route path='/about' element={<Intro/>} />
           </Routes>
         </ScrollToTop>
       </Router>
