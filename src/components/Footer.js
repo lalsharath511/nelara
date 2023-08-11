@@ -90,8 +90,12 @@ const Footer = () => {
                     </div>          
 
                     </div>
+                    <script src="https://cdn.botpress.cloud/webchat/v0/inject.js"></script>
+                    <script src="https://mediafiles.botpress.cloud/3203c1ee-8671-45e9-91a3-037e9e5c8f28/webchat/config.js" defer></script>
+                 
 
                     <div className="flex flex-wrap items-center md:justify-between justify-center mx-auto px-4">
+
                 <div className="w-full md:w-4/12 px-4 mx-auto text-center py-2">
                     <div className="text-sm text-gray-200 font-semibold py-1">
                     Copyright &copy; {new Date().getFullYear()}{"  "}
