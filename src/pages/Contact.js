@@ -37,16 +37,18 @@ const Contact = () => {
         fData.append('email', email)
         fData.append('phone_number', phone)
         fData.append('message', message)
-
+        console.log("here");
         axios({
             method: "post",
-            url: process.env.REACT_APP_CONTACT_API,
+            url: "https://script.google.com/macros/s/AKfycbxV0agXbNTrBmk7MHVY3bVixqW_SiZR8uksc1RvRgRnAsARFToIzmCsjZ91sWL307W_/exec",
             data: fData,
             headers: {
                 'Content-Type':  'multipart/form-data'
             }
+            
         })
         .then(function (response) {
+            console.log("1st stages");
             document.getElementById('submitBtn').disabled = false;
             document.getElementById('submitBtn').innerHTML = 'send message';
             clearInput()
@@ -58,6 +60,7 @@ const Contact = () => {
             );
         })
         .catch(function (error) {
+            console.log("1st stages failed");
             document.getElementById('submitBtn').disabled = false;
             document.getElementById('submitBtn').innerHTML = 'send message';
             //handle error
@@ -70,6 +73,7 @@ const Contact = () => {
                 );
             }
             if(response.data.errors !== null) {
+                console.log("2st stages failed");
                 setErrors(response.data.errors)
             }
             
@@ -84,7 +88,7 @@ const Contact = () => {
                 <div className="container mx-auto my-8 px-4 lg:px-20" data-aos="zoom-in">
 
                 <form onSubmit={sendEmail}>
-
+                {/* <form method='POST' action='https://script.google.com/macros/s/AKfycbxV0agXbNTrBmk7MHVY3bVixqW_SiZR8uksc1RvRgRnAsARFToIzmCsjZ91sWL307W_/exec'> */}
                     <div className="w-full bg-white p-8 my-4 md:px-12 lg:w-9/12 lg:pl-20 lg:pr-40 mr-auto rounded-2xl shadow-2xl">
                         <div className="flex">
                             <h1 className="font-bold text-center lg:text-left text-blue-900 uppercase text-4xl">Send us a message</h1>
@@ -96,6 +100,7 @@ const Contact = () => {
                                         className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
                                         type="text" 
                                         placeholder="First Name*" 
+                                        id='first_name'
                                         value={firstName}
                                         onChange={(e)=> setFirstName(e.target.value)}
                                         onKeyUp={clearErrors}
@@ -111,6 +116,7 @@ const Contact = () => {
                                         className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
                                         type="text" 
                                         placeholder="Last Name*"
+                                        id='last_name'
                                         value={lastName}
                                         onChange={(e)=> setLastName(e.target.value)}
                                         onKeyUp={clearErrors}
@@ -125,6 +131,7 @@ const Contact = () => {
                                         name="email"
                                         className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
                                         type="email" 
+                                        id='email'
                                         placeholder="Email*"
                                         value={email}
                                         onChange={(e)=> setEmail(e.target.value)}
@@ -140,6 +147,7 @@ const Contact = () => {
                                         name="phone_number" 
                                         className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
                                         type="number" 
+                                        id='phone_number'
                                         placeholder="Phone*"
                                         value={phone}
                                         onChange={(e)=> setPhone(e.target.value)}
@@ -156,6 +164,7 @@ const Contact = () => {
                                 placeholder="Message*" 
                                 className="w-full h-32 bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
                                 value={message}
+                                id='message'
                                 onChange={(e)=> setMessage(e.target.value)}
                                 onKeyUp={clearErrors}
                             ></textarea>
